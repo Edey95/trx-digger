@@ -20,7 +20,7 @@ const GlobalRouter = () => {
 
   const location = useLocation()
 
-  useEffect(() => {
+  {/* useEffect(() => {
     if (user) {
       for (let i = 0; i < user.userLoged.roles.length; i++) {
         if (user.userLoged.roles[i].name.includes('admin')) {
@@ -33,7 +33,7 @@ const GlobalRouter = () => {
         }
       }
     }
-  }, [location])
+  }, [location]) */}
 
 
   return (
@@ -56,7 +56,7 @@ const GlobalRouter = () => {
               <Route index element={<Home />} />
 
               <Route element={<ProtectedRoutes
-                isAllowed={!!user && (isAdmin || isModerator)}
+                isAllowed={!!user}
                 redirectTo='/dashboard' />}>
                 <Route path="users">
                   <Route index element={<List />} />
